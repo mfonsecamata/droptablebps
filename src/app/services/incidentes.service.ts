@@ -12,8 +12,7 @@ export class IncidentesService {
 
   headers: Headers;
   options: RequestOptions;
-  incidentes=  [ null,
-      {
+  incidentes =  [{
       "domicilio" : "domicilio1",
       "edad" : 30,
       "empresa" : "empresa1",
@@ -104,6 +103,8 @@ export class IncidentesService {
     }
     ];
 
+    patologias: {labels: ['Gripe', 'Neomonia', 'Cancer'], data:[300, 500, 100]};
+
 
 
 
@@ -132,33 +133,13 @@ export class IncidentesService {
 
 
   getIncidentes(){
-
-  //return Observable.of(this.incidentes);
-  return this.incidentes;
+    //return Observable.of(this.incidentes);
+    return this.incidentes;
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  getPatologiasPrincipales(){
+    //return Observable.of(this.incidentes);
+    return this.patologias;
+  }
 
 }

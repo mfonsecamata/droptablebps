@@ -17,8 +17,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContainerComponent } from './components/container/container.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { HeroesComponent } from './components/heroes/heroes.component';
-import { NoticeComponent } from './components/notice/notice.component';
 import { RubrosComponent } from './components/rubros/rubros.component';
 import { GraficasIncidentesComponent } from './components/graficas-incidentes/graficas-incidentes.component';
 
@@ -26,6 +24,9 @@ import { GraficasIncidentesComponent } from './components/graficas-incidentes/gr
 import {environment} from '../environments/environment';
 //Servicios
 import { IncidentesService } from './services/incidentes.service';
+import { GraficBarcharComponent } from './components/grafic-barchar/grafic-barchar.component';
+import { GraficaDoughnutchartComponent } from './components/grafica-doughnutchart/grafica-doughnutchart.component';
+import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-piechart.component';
 
 @NgModule({
   declarations: [
@@ -34,10 +35,8 @@ import { IncidentesService } from './services/incidentes.service';
     ContainerComponent,
     MenuComponent,
     DashboardComponent,
-    HeroesComponent,
-    NoticeComponent,
     RubrosComponent,    
-    GraficasIncidentesComponent
+    GraficasIncidentesComponent, GraficBarcharComponent, GraficaDoughnutchartComponent, GraficaPiechartComponent
     
   ],
   imports: [
@@ -57,14 +56,6 @@ import { IncidentesService } from './services/incidentes.service';
         path: 'dashboard',
         component: DashboardComponent
       },{
-        path: 'heroes',
-        component: HeroesComponent
-      }
-      ,{
-        path: 'notices',
-        component: NoticeComponent
-      }
-      ,{
         path: 'rubros',
         component: RubrosComponent
       }

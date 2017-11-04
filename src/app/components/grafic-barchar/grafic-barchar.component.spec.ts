@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeroeAddFireBaseComponent } from './heroe-add-fire-base.component';
+import { GraficBarcharComponent } from './grafic-barchar.component';
 
-describe('HeroeAddFireBaseComponent', () => {
-  let component: HeroeAddFireBaseComponent;
-  let fixture: ComponentFixture<HeroeAddFireBaseComponent>;
+describe('GraficBarcharComponent', () => {
+  let component: GraficBarcharComponent;
+  let fixture: ComponentFixture<GraficBarcharComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroeAddFireBaseComponent ]
+      declarations: [ GraficBarcharComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeroeAddFireBaseComponent);
+    fixture = TestBed.createComponent(GraficBarcharComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
