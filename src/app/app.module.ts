@@ -9,8 +9,6 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { ChartsModule } from 'ng2-charts';
 
-
-
 //Componentes
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -18,6 +16,7 @@ import { ContainerComponent } from './components/container/container.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RubrosComponent } from './components/rubros/rubros.component';
+import { PatologiasComponent } from './components/patologias/patologias.component';
 import { GraficasIncidentesComponent } from './components/graficas-incidentes/graficas-incidentes.component';
 
 //Otros
@@ -35,9 +34,10 @@ import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-
     ContainerComponent,
     MenuComponent,
     DashboardComponent,
-    RubrosComponent,    
+    RubrosComponent,
+    PatologiasComponent,
     GraficasIncidentesComponent, GraficBarcharComponent, GraficaDoughnutchartComponent, GraficaPiechartComponent
-    
+
   ],
   imports: [
     NgbModule.forRoot(),
@@ -58,6 +58,9 @@ import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-
       },{
         path: 'rubros',
         component: RubrosComponent
+      },{
+        path: 'patologias',
+        component: PatologiasComponent
       }
     ])
   ],
