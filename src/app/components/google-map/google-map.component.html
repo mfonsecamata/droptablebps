@@ -7,7 +7,7 @@
         </li>  
     </ul>
 </div>
-<agm-map [latitude]="lat" [longitude]="lng" [zoom]="12" >
+<agm-map [latitude]="lat" [longitude]="lng" >
   <agm-marker  *ngFor="let coordenada of coordenadas; let i = index"  [latitude]="coordenada.lat"  [longitude]="coordenada.lng" (markerClick)="markerClick(coordenada)"></agm-marker>  
 </agm-map>
 

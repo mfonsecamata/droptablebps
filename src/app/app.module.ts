@@ -19,6 +19,10 @@ import { MenuComponent } from './components/menu/menu.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RubrosComponent } from './components/rubros/rubros.component';
 import { PatologiasComponent } from './components/patologias/patologias.component';
+import {HeroesComponent} from './components/heroes/heroes.component';
+import {NoticeComponent} from './components/notice/notice.component';
+import {AddHeroeComponent} from './components/add-heroe/add-heroe.component';
+
 
 //Otros
 import {environment} from '../environments/environment';
@@ -46,15 +50,13 @@ import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-
     HeroeListFireBaseComponent,
     HeroeAddFireBaseComponent,
     GoogleMapComponent,
-    GoogleMapJavascriptComponent
-    RubrosComponent,    
+    GoogleMapJavascriptComponent,        
     GraficBarcharComponent, 
     GraficaPiechartComponent,    
     RubrosComponent,
     PatologiasComponent,
     GraficBarcharComponent, 
     GraficaPiechartComponent
-
   ],
   imports: [
     NgbModule.forRoot(),
@@ -84,7 +86,8 @@ import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-
         component: HeroeListFireBaseComponent
       },{
         path: 'googleMap',
-        component: GoogleMapComponent},{
+        component: GoogleMapComponent
+      },{
         path: 'patologias',
         component: PatologiasComponent
       }
