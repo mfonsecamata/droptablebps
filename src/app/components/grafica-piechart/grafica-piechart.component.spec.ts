@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HeroesComponent } from './heroes.component';
+import { GraficaPiechartComponent } from './grafica-piechart.component';
 
-describe('HeroesComponent', () => {
-  let component: HeroesComponent;
-  let fixture: ComponentFixture<HeroesComponent>;
+describe('GraficaPiechartComponent', () => {
+  let component: GraficaPiechartComponent;
+  let fixture: ComponentFixture<GraficaPiechartComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HeroesComponent ]
+      declarations: [ GraficaPiechartComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HeroesComponent);
+    fixture = TestBed.createComponent(GraficaPiechartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

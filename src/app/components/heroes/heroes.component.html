@@ -1,9 +1,0 @@
-<app-add-heroe (heroeAgregar)="agregarHeroe($event)"></app-add-heroe>
-<ul class="list-group">    
-    <li *ngFor="let hero of heroes" 
-      [class.selected]="hero === selectedHero"
-      (click)="onSelect(hero)"      
-      class="list-group-item list-group-item-action list-group-item-primary">
-      <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </li> 
-</ul>
