@@ -9,11 +9,13 @@ import { IncidentesService } from '../../services/incidentes.service';
 
 export class PatologiasComponent implements OnInit {
 
+  patologiasAnios;
+
   constructor(
   private incidentesService:IncidentesService) { }
 
   ngOnInit() {
-
+    this.patologiasAnios=this.incidentesService.getPatologiasAnios();
   }
 
 }
