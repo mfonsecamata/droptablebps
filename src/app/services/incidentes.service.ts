@@ -138,7 +138,6 @@ export class IncidentesService {
   return this.incidentes;
   }
 
-
   getPatologiasLabels(){
     var labels=[];
     var data=[];
@@ -160,9 +159,7 @@ export class IncidentesService {
   getPatologiasData(){
     var labels=[];
     var data=[];
-
     var arr = this.incidentes;
-
     var obj = { };
     for (var i = 0, j = arr.length; i < j; i++) {
       obj[arr[i].patologia] = (obj[arr[i].patologia] || 0) + 1;
@@ -177,27 +174,58 @@ export class IncidentesService {
 
 
 
+  getPatologiasAnios(){
+   var anios = ["2013","2012","2015","2016","2017"]
+   var data = [];
+   var patologia= "gripe";
 
-  //devuelve los rubros más riegosos
-  //getRubros(){
+   var soloPatologias= this.incidentes.filter(el =>
+   el.patologia == patologia);
+   for (var i = 0, j = anios.length; i < j; i++) {
+    var soloAnios=soloPatologias.filter(
+    el => el.fecha.split("/")[2] == anios[i]
+    )
+    data.push(soloAnios.length)
+    }
 
-  //return Observable.of(this.incidentes);
+    return anios;
+  }
 
-  //let data = this.incidentes;
-  //var result = [];
-  //for(var i = 0; i < data.length; i++){
-  //  for(var item in data[i]){
-  //    if(!result[item.rubr]){
-  //        result[item] = {};
-  //    }
-  //    if(!result[item][data[i][item]]){
-  //        result[item][data[i][item]] = 0;
-    //  }
-  //  result[item][data[i][item]]++;
-  // }
-  //}
+  getPatologiasNombre(){
+   var anios = ["2013","2012","2015","2016","2017"]
+   var data = [];
+   var patologia= "gripe";
+
+   var soloPatologias= this.incidentes.filter(el =>
+   el.patologia == patologia);
+   for (var i = 0, j = anios.length; i < j; i++) {
+    var soloAnios=soloPatologias.filter(
+    el => el.fecha.split("/")[2] == anios[i]
+    )
+    data.push(soloAnios.length)
+    }
+    return patologia;
+
+  }
+
+  getPatologiasAnioCantidad(){
+   var anios = ["2013","2012","2015","2016","2017"]
+   var data = [];
+   var patologia= "gripe";
+
+   var soloPatologias= this.incidentes.filter(el =>
+   el.patologia == patologia);
+   for (var i = 0, j = anios.length; i < j; i++) {
+    var soloAnios=soloPatologias.filter(
+    el => el.fecha.split("/")[2] == anios[i]
+    )
+    data.push(soloAnios.length)
+    }
+
+    return data;
+  }
 
 
-  //  return result;
-  //}
+
+
 }
