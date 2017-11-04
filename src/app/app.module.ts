@@ -1,11 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,ApplicationRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 import { RouterModule }   from '@angular/router';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -19,6 +21,8 @@ import { AddHeroeComponent } from './components/add-heroe/add-heroe.component';
 import {environment} from '../environments/environment';
 import { HeroeListFireBaseComponent } from './components/heroe-list-fire-base/heroe-list-fire-base.component';
 import { HeroeAddFireBaseComponent } from './components/heroe-add-fire-base/heroe-add-fire-base.component';
+import { GoogleMapComponent } from './components/google-map/google-map.component';
+import { GoogleMapJavascriptComponent } from './components/google-map-javascript/google-map-javascript.component';
 
 @NgModule({
   declarations: [
@@ -31,15 +35,21 @@ import { HeroeAddFireBaseComponent } from './components/heroe-add-fire-base/hero
     NoticeComponent,
     AddHeroeComponent,
     HeroeListFireBaseComponent,
-    HeroeAddFireBaseComponent
+    HeroeAddFireBaseComponent,
+    GoogleMapComponent,
+    GoogleMapJavascriptComponent
   ],
   imports: [
     NgbModule.forRoot(),
     BrowserModule,
+    CommonModule,
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyDkmTic0g0TLUmDaMeqXIxbf19Xi1zQB24'
+    }),
     RouterModule.forRoot([
       {
         path: '',
@@ -63,6 +73,9 @@ import { HeroeAddFireBaseComponent } from './components/heroe-add-fire-base/hero
       },{
         path: 'listHeroeFireBase',
         component: HeroeListFireBaseComponent
+      },{
+        path: 'googleMap',
+        component: GoogleMapComponent
       }
     ])
   ],

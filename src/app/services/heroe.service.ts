@@ -37,12 +37,26 @@ getData(){
   return this.hoeroelist;
 }
 
+
 addHeroesFireBase(heroe: Heroe){
   this.hoeroelist.push({
     id: heroe.id,
-    name: heroe.name
+    name: heroe.name,
+    domicilio:heroe.domicilio,
+    edad:heroe.edad,
+    empresa:heroe.empresa,
+    factor:heroe.factor,
+    fecha:heroe.fecha,
+    nombre:heroe.nombre,
+    patologia:heroe.patologia,
+    puesto:heroe.puesto,
+    rubro:heroe.rubro,
+    salario:heroe.salario,
+    lat: heroe.lat,
+    lng: heroe.lng,
+    label: heroe.label,
+    zoom: heroe.zoom,
   })
-
   
 }
   

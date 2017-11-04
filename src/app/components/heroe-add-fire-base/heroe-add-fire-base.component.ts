@@ -31,8 +31,27 @@ export class HeroeAddFireBaseComponent implements OnInit {
   }*/
 
   agregarHeroe(newHero:Heroe){  
+    
     console.log("Entro a la funcion agregarHeroe"); 
+
+    newHero.domicilio="sdd";
+    newHero.domicilio="";
+    newHero.edad=23;
+    newHero.empresa="";
+    newHero.factor="";
+    newHero.fecha="string";
+    newHero.nombre="string";
+    newHero.patologia="string";
+    newHero.puesto="string";
+    newHero.rubro="string";
+    newHero.salario=23;
+    newHero.lat=23;
+    newHero.lng=23;
+    newHero.label="string";
+    newHero.zoom=34;
+
     this.newHero=newHero;
+    
     this.heroeService.addHeroesFireBase(this.newHero);    
 }
 
