@@ -14,11 +14,17 @@ import { MenuComponent } from './components/menu/menu.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { NoticeComponent } from './components/notice/notice.component';
-import { AddHeroeComponent } from './components/add-heroe/add-heroe.component';
+import { RubrosComponent } from './components/rubros/rubros.component';
+
 
 import {environment} from '../environments/environment';
 import { HeroeListFireBaseComponent } from './components/heroe-list-fire-base/heroe-list-fire-base.component';
 import { HeroeAddFireBaseComponent } from './components/heroe-add-fire-base/heroe-add-fire-base.component';
+
+import { IncidentesService } from './services/incidentes.service';
+
+
+
 
 @NgModule({
   declarations: [
@@ -29,7 +35,7 @@ import { HeroeAddFireBaseComponent } from './components/heroe-add-fire-base/hero
     DashboardComponent,
     HeroesComponent,
     NoticeComponent,
-    AddHeroeComponent,
+    RubrosComponent,
     HeroeListFireBaseComponent,
     HeroeAddFireBaseComponent
   ],
@@ -51,22 +57,24 @@ import { HeroeAddFireBaseComponent } from './components/heroe-add-fire-base/hero
       },{
         path: 'heroes',
         component: HeroesComponent
-      },{
+      }
+      ,{
         path: 'notices',
         component: NoticeComponent
-      },{
-        path: 'addHeroe',
-        component: AddHeroeComponent
-      },{
+      }
+      ,{
         path: 'addHeroeFireBase',
         component: HeroeAddFireBaseComponent
       },{
         path: 'listHeroeFireBase',
         component: HeroeListFireBaseComponent
+      },{
+        path: 'rubros',
+        component: RubrosComponent
       }
     ])
   ],
-  providers: [],
+  providers: [IncidentesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
