@@ -18,7 +18,6 @@ import { ContainerComponent } from './components/container/container.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { RubrosComponent } from './components/rubros/rubros.component';
-import { GraficasIncidentesComponent } from './components/graficas-incidentes/graficas-incidentes.component';
 
 //Otros
 import {environment} from '../environments/environment';
@@ -27,7 +26,6 @@ import {environment} from '../environments/environment';
 //Servicios
 import { IncidentesService } from './services/incidentes.service';
 import { GraficBarcharComponent } from './components/grafic-barchar/grafic-barchar.component';
-import { GraficaDoughnutchartComponent } from './components/grafica-doughnutchart/grafica-doughnutchart.component';
 import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-piechart.component';
 
 @NgModule({
@@ -38,7 +36,8 @@ import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-
     MenuComponent,
     DashboardComponent,
     RubrosComponent,    
-    GraficasIncidentesComponent, GraficBarcharComponent, GraficaDoughnutchartComponent, GraficaPiechartComponent
+    GraficBarcharComponent, 
+    GraficaPiechartComponent
     
   ],
   imports: [
