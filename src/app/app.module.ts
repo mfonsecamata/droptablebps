@@ -1,3 +1,4 @@
+//Modulos
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
@@ -6,7 +7,11 @@ import { HttpModule }    from '@angular/http';
 import { RouterModule }   from '@angular/router';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { ChartsModule } from 'ng2-charts';
 
+
+
+//Componentes
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ContainerComponent } from './components/container/container.component';
@@ -15,16 +20,12 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { NoticeComponent } from './components/notice/notice.component';
 import { RubrosComponent } from './components/rubros/rubros.component';
+import { GraficasIncidentesComponent } from './components/graficas-incidentes/graficas-incidentes.component';
 
-
+//Otros
 import {environment} from '../environments/environment';
-import { HeroeListFireBaseComponent } from './components/heroe-list-fire-base/heroe-list-fire-base.component';
-import { HeroeAddFireBaseComponent } from './components/heroe-add-fire-base/heroe-add-fire-base.component';
-
+//Servicios
 import { IncidentesService } from './services/incidentes.service';
-
-
-
 
 @NgModule({
   declarations: [
@@ -35,9 +36,9 @@ import { IncidentesService } from './services/incidentes.service';
     DashboardComponent,
     HeroesComponent,
     NoticeComponent,
-    RubrosComponent,
-    HeroeListFireBaseComponent,
-    HeroeAddFireBaseComponent
+    RubrosComponent,    
+    GraficasIncidentesComponent
+    
   ],
   imports: [
     NgbModule.forRoot(),
@@ -46,6 +47,7 @@ import { IncidentesService } from './services/incidentes.service';
     HttpModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
+    ChartsModule,
     RouterModule.forRoot([
       {
         path: '',
@@ -63,12 +65,6 @@ import { IncidentesService } from './services/incidentes.service';
         component: NoticeComponent
       }
       ,{
-        path: 'addHeroeFireBase',
-        component: HeroeAddFireBaseComponent
-      },{
-        path: 'listHeroeFireBase',
-        component: HeroeListFireBaseComponent
-      },{
         path: 'rubros',
         component: RubrosComponent
       }
