@@ -19,7 +19,8 @@ export class RubrosComponent implements OnInit {
 
   //selectedHero: Heroe;
   incidentes;
-
+  rubros;
+  patologias;
 
   constructor(
   private incidentesService:IncidentesService) { }
@@ -30,9 +31,14 @@ export class RubrosComponent implements OnInit {
 
   ngOnInit() {
 
-    this.incidentes = JSON.stringify(this.incidentesService.getIncidentes());
+    //this.patologias = this.incidentesService.getPatologias();
+    //this.incidentes = this.incidentesService.getIncidentes();
+    //this.rubros=this.incidentesService.getRubros();
 
-
+    //var data = this.incidentesService.getRubros();
+    //this.rubros=data.filter(
+    //function(data){ return data.rubro == 'rubros' }
+    //);
     //this.getHeroes();
     //this.heroeService.getData();
 

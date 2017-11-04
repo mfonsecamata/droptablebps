@@ -8,4 +8,9 @@
     </li>
 </ul-->
 
-{{incidentes}}
+<ul class="list-group">
+    <li *ngFor="let patologia of patologias">
+      <span class="badge">{{patologia}}</span>
+    </li>
+</ul>
+{{patologias}}

@@ -12,7 +12,7 @@ export class IncidentesService {
 
   headers: Headers;
   options: RequestOptions;
-  incidentes=  [ null,
+  incidentes=  [
       {
       "domicilio" : "domicilio1",
       "edad" : 30,
@@ -132,33 +132,70 @@ export class IncidentesService {
 
 
   getIncidentes(){
-
   //return Observable.of(this.incidentes);
   return this.incidentes;
   }
 
 
+  getPatologiasLabels(){
+    var labels=[];
+    var data=[];
+
+    var arr = this.incidentes;
+
+    var obj = { };
+    for (var i = 0, j = arr.length; i < j; i++) {
+      obj[arr[i].patologia] = (obj[arr[i].patologia] || 0) + 1;
+    }
+    //console.log(obj);
+    for(var item in obj){
+      labels.push(item)
+      data.push(obj[item])
+    }
+    return labels;
+  }
+
+  getPatologiasData(){
+    var labels=[];
+    var data=[];
+
+    var arr = this.incidentes;
+
+    var obj = { };
+    for (var i = 0, j = arr.length; i < j; i++) {
+      obj[arr[i].patologia] = (obj[arr[i].patologia] || 0) + 1;
+    }
+    //console.log(obj);
+    for(var item in obj){
+      labels.push(item)
+      data.push(obj[item])
+    }
+    return data;
+  }
 
 
 
 
+  //devuelve los rubros más riegosos
+  //getRubros(){
+
+  //return Observable.of(this.incidentes);
+
+  //let data = this.incidentes;
+  //var result = [];
+  //for(var i = 0; i < data.length; i++){
+  //  for(var item in data[i]){
+  //    if(!result[item.rubr]){
+  //        result[item] = {};
+  //    }
+  //    if(!result[item][data[i][item]]){
+  //        result[item][data[i][item]] = 0;
+    //  }
+  //  result[item][data[i][item]]++;
+  // }
+  //}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  //  return result;
+  //}
 }
