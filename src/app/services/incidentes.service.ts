@@ -12,7 +12,12 @@ export class IncidentesService {
 
   headers: Headers;
   options: RequestOptions;
+<<<<<<< HEAD
   incidentes =  [{
+=======
+  incidentes=  [
+      {
+>>>>>>> b4f7c6e17e12ebfd87af0c1efbcbac8a6e4148a5
       "domicilio" : "domicilio1",
       "edad" : 30,
       "empresa" : "empresa1",
@@ -133,6 +138,7 @@ export class IncidentesService {
 
 
   getIncidentes(){
+<<<<<<< HEAD
     //return Observable.of(this.incidentes);
     return this.incidentes;
   }
@@ -142,4 +148,72 @@ export class IncidentesService {
     return this.patologias;
   }
 
+=======
+  //return Observable.of(this.incidentes);
+  return this.incidentes;
+  }
+
+
+  getPatologiasLabels(){
+    var labels=[];
+    var data=[];
+
+    var arr = this.incidentes;
+
+    var obj = { };
+    for (var i = 0, j = arr.length; i < j; i++) {
+      obj[arr[i].patologia] = (obj[arr[i].patologia] || 0) + 1;
+    }
+    //console.log(obj);
+    for(var item in obj){
+      labels.push(item)
+      data.push(obj[item])
+    }
+    return labels;
+  }
+
+  getPatologiasData(){
+    var labels=[];
+    var data=[];
+
+    var arr = this.incidentes;
+
+    var obj = { };
+    for (var i = 0, j = arr.length; i < j; i++) {
+      obj[arr[i].patologia] = (obj[arr[i].patologia] || 0) + 1;
+    }
+    //console.log(obj);
+    for(var item in obj){
+      labels.push(item)
+      data.push(obj[item])
+    }
+    return data;
+  }
+
+
+
+
+  //devuelve los rubros más riegosos
+  //getRubros(){
+
+  //return Observable.of(this.incidentes);
+
+  //let data = this.incidentes;
+  //var result = [];
+  //for(var i = 0; i < data.length; i++){
+  //  for(var item in data[i]){
+  //    if(!result[item.rubr]){
+  //        result[item] = {};
+  //    }
+  //    if(!result[item][data[i][item]]){
+  //        result[item][data[i][item]] = 0;
+    //  }
+  //  result[item][data[i][item]]++;
+  // }
+  //}
+
+
+  //  return result;
+  //}
+>>>>>>> b4f7c6e17e12ebfd87af0c1efbcbac8a6e4148a5
 }
