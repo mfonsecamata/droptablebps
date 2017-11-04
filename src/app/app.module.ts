@@ -19,17 +19,13 @@ import { MenuComponent } from './components/menu/menu.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeroesComponent } from './components/heroes/heroes.component';
 import { NoticeComponent } from './components/notice/notice.component';
-import { AddHeroeComponent } from './components/add-heroe/add-heroe.component';
-import { HeroeListFireBaseComponent } from './components/heroe-list-fire-base/heroe-list-fire-base.component';
-import { HeroeAddFireBaseComponent } from './components/heroe-add-fire-base/heroe-add-fire-base.component';
-
-//Servicios
-
+import { RubrosComponent } from './components/rubros/rubros.component';
+import { GraficasIncidentesComponent } from './components/graficas-incidentes/graficas-incidentes.component';
 
 //Otros
 import {environment} from '../environments/environment';
-import { GraficasIncidentesComponent } from './components/graficas-incidentes/graficas-incidentes.component';
-
+//Servicios
+import { IncidentesService } from './services/incidentes.service';
 
 @NgModule({
   declarations: [
@@ -40,9 +36,7 @@ import { GraficasIncidentesComponent } from './components/graficas-incidentes/gr
     DashboardComponent,
     HeroesComponent,
     NoticeComponent,
-    AddHeroeComponent,
-    HeroeListFireBaseComponent,
-    HeroeAddFireBaseComponent,
+    RubrosComponent,    
     GraficasIncidentesComponent
     
   ],
@@ -65,22 +59,18 @@ import { GraficasIncidentesComponent } from './components/graficas-incidentes/gr
       },{
         path: 'heroes',
         component: HeroesComponent
-      },{
+      }
+      ,{
         path: 'notices',
         component: NoticeComponent
-      },{
-        path: 'addHeroe',
-        component: AddHeroeComponent
-      },{
-        path: 'addHeroeFireBase',
-        component: HeroeAddFireBaseComponent
-      },{
-        path: 'listHeroeFireBase',
-        component: HeroeListFireBaseComponent
+      }
+      ,{
+        path: 'rubros',
+        component: RubrosComponent
       }
     ])
   ],
-  providers: [],
+  providers: [IncidentesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
