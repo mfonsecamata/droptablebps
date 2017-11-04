@@ -16,8 +16,8 @@ export class GraficaPiechartComponent implements OnInit {
   constructor(private incidentesService: IncidentesService) { }
 
   ngOnInit() {
-    this.pieChartLabels = this.incidentesService.getPatologiasPrincipales().labels;
-    this.pieChartData = this.incidentesService.getPatologiasPrincipales().data;
+    this.pieChartLabels = this.incidentesService.getPatologiasLabels();
+    this.pieChartData = this.incidentesService.getPatologiasData();
   }
 
   
