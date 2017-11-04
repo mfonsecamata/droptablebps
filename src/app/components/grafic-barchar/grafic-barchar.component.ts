@@ -20,9 +20,9 @@ export class GraficBarcharComponent implements OnInit {
   constructor(private incidentesService: IncidentesService) { }
 
   ngOnInit() {
-    this.barChartLabels = this.incidentesService.getPatologiasLabels();
+    this.barChartLabels = this.incidentesService.getPatologiasAnios();
     this.barChartData = [
-      {data: this.incidentesService.getPatologiasLabels(), label: this.incidentesService.getPatologiasLabels()}
+      {data: this.incidentesService.getPatologiasAnioCantidad(), label: this.incidentesService.getPatologiasNombre()}
     ];
   
   }  
