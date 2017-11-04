@@ -12,12 +12,8 @@ export class IncidentesService {
 
   headers: Headers;
   options: RequestOptions;
-<<<<<<< HEAD
-  incidentes =  [{
-=======
   incidentes=  [
       {
->>>>>>> b4f7c6e17e12ebfd87af0c1efbcbac8a6e4148a5
       "domicilio" : "domicilio1",
       "edad" : 30,
       "empresa" : "empresa1",
@@ -138,17 +134,6 @@ export class IncidentesService {
 
 
   getIncidentes(){
-<<<<<<< HEAD
-    //return Observable.of(this.incidentes);
-    return this.incidentes;
-  }
-
-  getPatologiasPrincipales(){
-    //return Observable.of(this.incidentes);
-    return this.patologias;
-  }
-
-=======
   //return Observable.of(this.incidentes);
   return this.incidentes;
   }
@@ -215,5 +200,4 @@ export class IncidentesService {
 
   //  return result;
   //}
->>>>>>> b4f7c6e17e12ebfd87af0c1efbcbac8a6e4148a5
 }
