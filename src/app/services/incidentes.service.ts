@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response,RequestOptions  } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
 
 //import {Notice} from './notice';
 
@@ -11,7 +12,10 @@ import {Observable} from 'rxjs/Rx';
 export class IncidentesService {
 
   headers: Headers;
-  options: RequestOptions;
+  options: RequestOptions;  
+
+  incidenteslist : AngularFireList<any>;
+
   incidentes=  [
       {
       "domicilio" : "domicilio1",
@@ -109,7 +113,7 @@ export class IncidentesService {
 
 
 
-  constructor(private http: Http) {
+  constructor(private http: Http, private fireBase: AngularFireDatabase) {
     //this.headers = new Headers({ 'Content-Type': 'application/json', 'Accept': 'q=0.8;application/json;q=0.9' });
     //this.options = new RequestOptions({ headers: this.headers });
   }
@@ -135,7 +139,10 @@ export class IncidentesService {
 
   getIncidentes(){
   //return Observable.of(this.incidentes);
-  return this.incidentes;
+  //return this.incidentes;
+  this.incidenteslist = this.fireBase.list('heroes');
+  console.log(this.incidenteslist);
+  return this.incidenteslist;
   }
 
   getPatologiasLabels(){
@@ -225,7 +232,6 @@ export class IncidentesService {
     return data;
   }
 
-
-
+  
 
 }

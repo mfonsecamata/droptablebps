@@ -36,6 +36,7 @@ import { GoogleMapJavascriptComponent } from './components/google-map-javascript
 import { IncidentesService } from './services/incidentes.service';
 import { GraficBarcharComponent } from './components/grafic-barchar/grafic-barchar.component';
 import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-piechart.component';
+import { HeroeService } from './services/heroe.service';
 
 @NgModule({
   declarations: [
@@ -93,7 +94,7 @@ import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-
       }
     ])
   ],
-  providers: [IncidentesService],
+  providers: [IncidentesService,HeroeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
