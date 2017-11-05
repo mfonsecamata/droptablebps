@@ -27,7 +27,7 @@ export class GraficBarcharComponent implements OnInit {
   ) { }
 
   anios;
-  patologia;
+  patologia=localStorage.getItem("patologia");
   data;
 
   hoeroelist : Heroe[];
@@ -47,7 +47,8 @@ export class GraficBarcharComponent implements OnInit {
 
   this.anios = ["2013","2012","2015","2016","2017"]
   this.data = [];
-  this.patologia= "gripe";
+  //this.patologia= "gripe";
+  this.patologia=localStorage.getItem("patologia");
   var soloPatologias= this.hoeroelist.filter(el =>
   el.patologia == this.patologia);
   for (var i = 0, j = this.anios.length; i < j; i++) {
