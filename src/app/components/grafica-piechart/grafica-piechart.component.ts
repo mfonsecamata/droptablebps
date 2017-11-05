@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { IncidentesService } from '../../services/incidentes.service';
 
+import { HeroeService } from '../../services/heroe.service';
+import { Heroe } from '../../services/heroe';
+
+
+
 @Component({
   selector: 'app-grafica-piechart',
   templateUrl: './grafica-piechart.component.html',
@@ -13,14 +18,51 @@ export class GraficaPiechartComponent implements OnInit {
   public pieChartData:number[];
   public pieChartType:string = 'pie';
 
-  constructor(private incidentesService: IncidentesService) { }
+  hoeroelist : Heroe[];
+
+
+ labels;
+ data;
+
+  constructor(
+  private incidentesService: IncidentesService,
+  private heroeService: HeroeService
+  ) { }
 
   ngOnInit() {
-    this.pieChartLabels = this.incidentesService.getPatologiasLabels();
-    this.pieChartData = this.incidentesService.getPatologiasData();
+      var x = this.heroeService.getData();
+      console.log("x");
+      console.log(x);
+      x.snapshotChanges().subscribe(item=>{
+          this.hoeroelist = [];
+          item.forEach(element=>{
+            var y = element.payload.toJSON();
+            //y["id"]= element.key;
+            this.hoeroelist.push(y as Heroe);
+          });
+
+            this.labels=[];
+            this.data=[];
+            var arr = this.hoeroelist;
+            var obj = { };
+            for (var i = 0, j = arr.length; i < j; i++) {
+              obj[arr[i].patologia] = (obj[arr[i].patologia] || 0) + 1;
+            }
+            //console.log(obj);
+            for(var item2 in obj){
+              this.labels.push(item2)
+              this.data.push(obj[item2])
+            }
+           this.pieChartLabels = this.labels;
+           this.pieChartData = this.data;
+        });
+
+      //this.pieChartLabels = this.incidentesService.getPatologiasLabels();
+      //this.pieChartData = this.incidentesService.getPatologiasData();
+
+
+
   }
-
-
 
   // events
   public chartClicked(e:any):void {

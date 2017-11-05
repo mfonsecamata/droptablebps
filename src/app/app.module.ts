@@ -33,6 +33,7 @@ import { GoogleMapJavascriptComponent } from './components/google-map-javascript
 
 
 //Servicios
+import { HeroeService } from './services/heroe.service';
 import { IncidentesService } from './services/incidentes.service';
 import { GraficBarcharComponent } from './components/grafic-barchar/grafic-barchar.component';
 import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-piechart.component';
@@ -50,12 +51,12 @@ import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-
     HeroeListFireBaseComponent,
     HeroeAddFireBaseComponent,
     GoogleMapComponent,
-    GoogleMapJavascriptComponent,        
-    GraficBarcharComponent, 
-    GraficaPiechartComponent,    
+    GoogleMapJavascriptComponent,
+    GraficBarcharComponent,
+    GraficaPiechartComponent,
     RubrosComponent,
     PatologiasComponent,
-    GraficBarcharComponent, 
+    GraficBarcharComponent,
     GraficaPiechartComponent
   ],
   imports: [
@@ -93,7 +94,7 @@ import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-
       }
     ])
   ],
-  providers: [IncidentesService],
+  providers: [IncidentesService,HeroeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
