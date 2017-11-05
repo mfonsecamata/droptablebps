@@ -38,11 +38,7 @@ import { HeroeService } from './services/heroe.service';
 import { IncidentesService } from './services/incidentes.service';
 import { GraficBarcharComponent } from './components/grafic-barchar/grafic-barchar.component';
 import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-piechart.component';
-<<<<<<< HEAD
-import { HeroeService } from './services/heroe.service';
-=======
 import { TablaRiesgosComponent } from './components/tabla-riesgos/tabla-riesgos.component';
->>>>>>> 1a956037a89b1451e83a52c48af12fca0a188859
 
 @NgModule({
   declarations: [

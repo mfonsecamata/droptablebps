@@ -132,7 +132,7 @@ addIncidente(){
 }
 
 insertar(){  
-  Observable.interval(5000).subscribe(x => {
+  Observable.interval(60000).subscribe(x => {
     this.addIncidente()
   });
   
