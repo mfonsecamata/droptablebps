@@ -15,7 +15,7 @@ export class GoogleMapComponent implements OnInit {
   coordenadas : Coordenada[]=[];
   coordenada1 : Coordenada;  
   coordenada2 : Coordenada;
-  coordenadaSelect : Coordenada;
+  coordenadaSelect : Coordenada =new Coordenada();
   
   constructor() {    
 
@@ -39,10 +39,11 @@ export class GoogleMapComponent implements OnInit {
   }
 
   markerClick(coordenada: Coordenada) {   
+
     console.log(coordenada.label);
-    this.coordenadaSelect=new Coordenada();
-    this.coordenadaSelect.label=coordenada.label;
-    this.ngOnInit();
+    this.coordenadaSelect=coordenada
+    //this.coordenadaSelect.label=coordenada.label;
+   
   }
 
 }

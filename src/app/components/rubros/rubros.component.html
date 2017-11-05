@@ -13,4 +13,11 @@
       <span class="badge">{{patologia}}</span>
     </li>
 </ul>
-{{patologias}}
+
+
+<ul class="list-group">    
+  <li *ngFor="let incidente of incidentes" class="list-group-item list-group-item-action list-group-item-primary">
+    <span class="badge">{{incidente}}</span>
+  </li> 
+</ul>
+

@@ -29,7 +29,10 @@ hoeroelist : Heroe[];
 
 
   headers: Headers;
-  options: RequestOptions;
+  options: RequestOptions;  
+
+ 
+
   incidentes=  [
       {
       "domicilio" : "domicilio1",
@@ -271,7 +274,6 @@ hoeroelist : Heroe[];
     return data;
   }
 
-
-
+  
 
 }

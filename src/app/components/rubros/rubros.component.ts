@@ -31,7 +31,7 @@ export class RubrosComponent implements OnInit {
 
   ngOnInit() {
 
-    //this.patologias = this.incidentesService.getPatologias();
+    //this.patologias = this.incidentesService.getPatologias;
     //this.incidentes = this.incidentesService.getIncidentes();
     //this.rubros=this.incidentesService.getRubros();
 
@@ -41,6 +41,7 @@ export class RubrosComponent implements OnInit {
     //);
     //this.getHeroes();
     //this.heroeService.getData();
+    
 
   }
 
