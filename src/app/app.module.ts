@@ -11,6 +11,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { AgmCoreModule } from '@agm/core';
 import { ChartsModule } from 'ng2-charts';
 
+
 //Componentes
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -33,9 +34,11 @@ import { GoogleMapJavascriptComponent } from './components/google-map-javascript
 
 
 //Servicios
+import { HeroeService } from './services/heroe.service';
 import { IncidentesService } from './services/incidentes.service';
 import { GraficBarcharComponent } from './components/grafic-barchar/grafic-barchar.component';
 import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-piechart.component';
+import { TablaRiesgosComponent } from './components/tabla-riesgos/tabla-riesgos.component';
 
 @NgModule({
   declarations: [
@@ -50,13 +53,13 @@ import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-
     HeroeListFireBaseComponent,
     HeroeAddFireBaseComponent,
     GoogleMapComponent,
-    GoogleMapJavascriptComponent,        
-    GraficBarcharComponent, 
-    GraficaPiechartComponent,    
+    GoogleMapJavascriptComponent,
+    GraficBarcharComponent,
+    GraficaPiechartComponent,
     RubrosComponent,
     PatologiasComponent,
-    GraficBarcharComponent, 
-    GraficaPiechartComponent
+    GraficBarcharComponent,
+    GraficaPiechartComponent, TablaRiesgosComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -93,10 +96,13 @@ import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-
       },{
         path: 'patologias',
         component: PatologiasComponent
+      },{
+        path: 'riesgos',
+        component: TablaRiesgosComponent
       }
     ])
   ],
-  providers: [IncidentesService],
+  providers: [IncidentesService,HeroeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

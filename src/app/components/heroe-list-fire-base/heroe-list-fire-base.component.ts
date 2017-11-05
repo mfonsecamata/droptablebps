@@ -18,6 +18,7 @@ export class HeroeListFireBaseComponent implements OnInit {
   ngOnInit() {
 
     var x = this.heroeService.getData();
+    console.log(x);
 
     x.snapshotChanges().subscribe(item=>{
         this.hoeroelist = [];
