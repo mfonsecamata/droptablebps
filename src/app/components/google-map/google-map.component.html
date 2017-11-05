@@ -1,0 +1,16 @@
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<div > 
+    <ul class="list-group">  
+        <li class="list-group-item list-group-item-action list-group-item-primary">
+          <span class="badge">{{coordenadaSelect.label}}</span>
+        </li>  
+    </ul>
+</div>
+<agm-map [latitude]="lat" [longitude]="lng" >
+  <agm-marker  *ngFor="let coordenada of coordenadas; let i = index"  [latitude]="coordenada.lat"  [longitude]="coordenada.lng" (markerClick)="markerClick(coordenada)"></agm-marker>  
+</agm-map>
+
+
+
+
