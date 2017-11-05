@@ -76,23 +76,17 @@ import { TablaRiesgosComponent } from './components/tabla-riesgos/tabla-riesgos.
     RouterModule.forRoot([
       {
         path: '',
-        redirectTo: '/dashboard',
+        redirectTo: '/mapa',
         pathMatch: 'full'
       },{
-        path: 'dashboard',
-        component: DashboardComponent
+        path: 'mapa',
+        component: GoogleMapJavascriptComponent
       },{
         path: 'rubros',
         component: RubrosComponent
       },{
         path: 'listHeroeFireBase',
         component: HeroeListFireBaseComponent
-      },{
-        path: 'googleMap',
-        component: GoogleMapComponent
-      },{
-        path: 'googleMapFula',
-        component: GoogleMapJavascriptComponent
       },{
         path: 'patologias',
         component: PatologiasComponent

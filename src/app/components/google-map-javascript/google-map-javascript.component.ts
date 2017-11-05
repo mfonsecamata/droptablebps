@@ -17,6 +17,8 @@ export class GoogleMapJavascriptComponent implements OnInit {
   private map:any;
   hoeroelist : Heroe[]=[];  
 
+  private dibujar:Boolean=false;
+
   constructor(private heroeService: HeroeService) {    
 
   }
@@ -68,6 +70,7 @@ export class GoogleMapJavascriptComponent implements OnInit {
 
         var x = this.heroeService.getData();
         var i =0;
+        this.dibujar=false;
 
         x.snapshotChanges().subscribe(item=>{
 
@@ -146,9 +149,14 @@ export class GoogleMapJavascriptComponent implements OnInit {
                 marker.setMap(this.map);       */   
                 
                 marker.setMap(this.map);
+
                 
-              }             
+                
+              }         
+              
+              this.dibujar=true;
             
+              
         }
 
             //pintar el mapa
