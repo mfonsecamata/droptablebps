@@ -88,6 +88,9 @@ import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-
         path: 'googleMap',
         component: GoogleMapComponent
       },{
+        path: 'googleMapFula',
+        component: GoogleMapJavascriptComponent
+      },{
         path: 'patologias',
         component: PatologiasComponent
       }

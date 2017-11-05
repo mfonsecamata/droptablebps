@@ -38,6 +38,8 @@ getData(){
 }
 
 
+
+
 addHeroesFireBase(heroe: Heroe){
   this.hoeroelist.push({
     id: heroe.id,
