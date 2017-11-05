@@ -58,7 +58,7 @@ import { TablaRiesgosComponent } from './components/tabla-riesgos/tabla-riesgos.
     GraficaPiechartComponent,
     RubrosComponent,
     PatologiasComponent,
-    GraficBarcharComponent, 
+    GraficBarcharComponent,
     GraficaPiechartComponent, TablaRiesgosComponent
   ],
   imports: [
@@ -93,6 +93,9 @@ import { TablaRiesgosComponent } from './components/tabla-riesgos/tabla-riesgos.
       },{
         path: 'patologias',
         component: PatologiasComponent
+      },{
+        path: 'riesgos',
+        component: TablaRiesgosComponent
       }
     ])
   ],

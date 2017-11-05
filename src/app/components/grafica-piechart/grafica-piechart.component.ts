@@ -72,6 +72,8 @@ export class GraficaPiechartComponent implements OnInit {
     console.log(this.labels[e["active"][0]["_index"]]);
     localStorage.setItem("patologia",this.labels[e["active"][0]["_index"]]);
 
+    window.location.reload();
+
     //this.graficBarcharComponent.data="asda";
 
     this.heroeService.getData();
