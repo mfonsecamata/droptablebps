@@ -69,10 +69,12 @@ export class GoogleMapJavascriptComponent implements OnInit {
   ngOnInit() {
 
         var x = this.heroeService.getData();
-        var i =0;
+        
         this.dibujar=false;
 
         x.snapshotChanges().subscribe(item=>{
+
+          var i =0;
 
           this.hoeroelist = [];
 
@@ -80,9 +82,7 @@ export class GoogleMapJavascriptComponent implements OnInit {
 
             i=i+1;
             var y = element.payload.toJSON();            
-            this.hoeroelist.push(y as Heroe);
-
-           
+            this.hoeroelist.push(y as Heroe);           
            
             if (i==item.length){
                           
@@ -148,9 +148,7 @@ export class GoogleMapJavascriptComponent implements OnInit {
           
                 marker.setMap(this.map);       */   
                 
-                marker.setMap(this.map);
-
-                
+                marker.setMap(this.map);               
                 
               }         
               
