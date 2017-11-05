@@ -11,6 +11,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { AgmCoreModule } from '@agm/core';
 import { ChartsModule } from 'ng2-charts';
 
+
 //Componentes
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -37,6 +38,7 @@ import { HeroeService } from './services/heroe.service';
 import { IncidentesService } from './services/incidentes.service';
 import { GraficBarcharComponent } from './components/grafic-barchar/grafic-barchar.component';
 import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-piechart.component';
+import { TablaRiesgosComponent } from './components/tabla-riesgos/tabla-riesgos.component';
 
 @NgModule({
   declarations: [
@@ -56,8 +58,13 @@ import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-
     GraficaPiechartComponent,
     RubrosComponent,
     PatologiasComponent,
+<<<<<<< HEAD
+    GraficBarcharComponent, 
+    GraficaPiechartComponent, TablaRiesgosComponent
+=======
     GraficBarcharComponent,
     GraficaPiechartComponent
+>>>>>>> ad12fc0f967fdc0d28e35cf843a83fb2b743a5f6
   ],
   imports: [
     NgbModule.forRoot(),
@@ -70,7 +77,7 @@ import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDkmTic0g0TLUmDaMeqXIxbf19Xi1zQB24'
     }),
-    ChartsModule,
+    ChartsModule,    
     RouterModule.forRoot([
       {
         path: '',

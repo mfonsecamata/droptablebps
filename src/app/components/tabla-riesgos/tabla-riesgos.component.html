@@ -1,0 +1,14 @@
+<table class="table table-dark table-responsive">
+    <thead>        
+      <tr>
+        <th *ngFor="let linea of patologias" scope="col">{{linea}}</th>        
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let linea of riesgos">
+            <td *ngFor="let linea1 of linea.data" scope="row">{{linea1}}</td> 
+        </tr>     
+    </tbody>
+  </table>
+
+  
