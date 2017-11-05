@@ -34,6 +34,7 @@ import { GoogleMapJavascriptComponent } from './components/google-map-javascript
 
 
 //Servicios
+import { HeroeService } from './services/heroe.service';
 import { IncidentesService } from './services/incidentes.service';
 import { GraficBarcharComponent } from './components/grafic-barchar/grafic-barchar.component';
 import { GraficaPiechartComponent } from './components/grafica-piechart/grafica-piechart.component';
@@ -52,13 +53,18 @@ import { TablaRiesgosComponent } from './components/tabla-riesgos/tabla-riesgos.
     HeroeListFireBaseComponent,
     HeroeAddFireBaseComponent,
     GoogleMapComponent,
-    GoogleMapJavascriptComponent,        
-    GraficBarcharComponent, 
-    GraficaPiechartComponent,    
+    GoogleMapJavascriptComponent,
+    GraficBarcharComponent,
+    GraficaPiechartComponent,
     RubrosComponent,
     PatologiasComponent,
+<<<<<<< HEAD
     GraficBarcharComponent, 
     GraficaPiechartComponent, TablaRiesgosComponent
+=======
+    GraficBarcharComponent,
+    GraficaPiechartComponent
+>>>>>>> ad12fc0f967fdc0d28e35cf843a83fb2b743a5f6
   ],
   imports: [
     NgbModule.forRoot(),
@@ -95,7 +101,7 @@ import { TablaRiesgosComponent } from './components/tabla-riesgos/tabla-riesgos.
       }
     ])
   ],
-  providers: [IncidentesService],
+  providers: [IncidentesService,HeroeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
