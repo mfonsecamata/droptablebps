@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response,RequestOptions  } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
-import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
+import { HeroeService } from './heroe.service';
+import { Heroe } from './heroe';
+
+
 
 //import {Notice} from './notice';
 
@@ -11,10 +14,24 @@ import {Observable} from 'rxjs/Rx';
 @Injectable()
 export class IncidentesService {
 
+constructor(private http: Http
+,private heroeService: HeroeService
+
+) {
+
+
+
+  //this.headers = new Headers({ 'Content-Type': 'application/json', 'Accept': 'q=0.8;application/json;q=0.9' });
+  //this.options = new RequestOptions({ headers: this.headers });
+}
+
+hoeroelist : Heroe[];
+
+
   headers: Headers;
   options: RequestOptions;  
 
-  incidenteslist : AngularFireList<any>;
+ 
 
   incidentes=  [
       {
@@ -110,13 +127,8 @@ export class IncidentesService {
 
     patologias: {labels: ['Gripe', 'Neomonia', 'Cancer'], data:[300, 500, 100]};
 
+    patologia=localStorage.getItem("patologia");
 
-
-
-  constructor(private http: Http, private fireBase: AngularFireDatabase) {
-    //this.headers = new Headers({ 'Content-Type': 'application/json', 'Accept': 'q=0.8;application/json;q=0.9' });
-    //this.options = new RequestOptions({ headers: this.headers });
-  }
 
   getService(url: string): Promise<any> {
     return this.http
@@ -139,18 +151,30 @@ export class IncidentesService {
 
   getIncidentes(){
   //return Observable.of(this.incidentes);
-  //return this.incidentes;
-  this.incidenteslist = this.fireBase.list('heroes');
-  console.log(this.incidenteslist);
-  return this.incidenteslist;
+
+
+  var x = this.heroeService.getData();
+
+  x.snapshotChanges().subscribe(item=>{
+      this.hoeroelist = [];
+      item.forEach(element=>{
+        var y = element.payload.toJSON();
+        //y["id"]= element.key;
+        this.hoeroelist.push(y as Heroe);
+        console.log(this.hoeroelist);
+      });
+
+  });
+
+
+
+  return this.incidentes;
   }
 
   getPatologiasLabels(){
     var labels=[];
     var data=[];
-
     var arr = this.incidentes;
-
     var obj = { };
     for (var i = 0, j = arr.length; i < j; i++) {
       obj[arr[i].patologia] = (obj[arr[i].patologia] || 0) + 1;
@@ -164,6 +188,9 @@ export class IncidentesService {
   }
 
   getPatologiasData(){
+
+
+
     var labels=[];
     var data=[];
     var arr = this.incidentes;
@@ -182,9 +209,18 @@ export class IncidentesService {
 
 
   getPatologiasAnios(){
-   var anios = ["2013","2012","2015","2016","2017"]
+   var anios = ["2013","2012","2015","2016","2017"];
    var data = [];
-   var patologia= "gripe";
+   var patologia= this.patologia;
+    console.log("sssssssssssssssssssss");
+   //console.log("locahhhhklkmlkmlnlkleeeee storage"+ localStorage.getItem("patologia") );
+
+
+   //var heroes = this.heroeService.getData();
+   console.log("heroes");
+   //console.log(heroes);
+
+
 
    var soloPatologias= this.incidentes.filter(el =>
    el.patologia == patologia);
@@ -201,7 +237,7 @@ export class IncidentesService {
   getPatologiasNombre(){
    var anios = ["2013","2012","2015","2016","2017"]
    var data = [];
-   var patologia= "gripe";
+   var patologia= this.patologia;
 
    var soloPatologias= this.incidentes.filter(el =>
    el.patologia == patologia);
@@ -215,10 +251,16 @@ export class IncidentesService {
 
   }
 
+
+ setPatologia(patologia){
+  this.patologia=patologia;
+ }
+
+
   getPatologiasAnioCantidad(){
    var anios = ["2013","2012","2015","2016","2017"]
    var data = [];
-   var patologia= "gripe";
+   var patologia= this.patologia;
 
    var soloPatologias= this.incidentes.filter(el =>
    el.patologia == patologia);
