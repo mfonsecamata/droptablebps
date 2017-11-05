@@ -1,3 +1,7 @@
-<p>
-  google-map-javascript works!
-</p>
+<div *ngIf="hoeroelist">
+
+  <div id="map" style="width: 100%; height: 500px;"></div>
+  <button type="button" pButton label="Zoom in" (click)="zoomIn()"></button>
+  <button type="button" pButton label="Zoom in" (click)="zoomOut()"></button>
+
+</div>
