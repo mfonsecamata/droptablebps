@@ -27,7 +27,7 @@ export class GraficBarcharComponent implements OnInit {
   ) { }
 
   anios;
-  patologia;
+  patologia=localStorage.getItem("patologia");
   data;
 
   hoeroelist : Heroe[];

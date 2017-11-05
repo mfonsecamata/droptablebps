@@ -4,6 +4,8 @@ import { IncidentesService } from '../../services/incidentes.service';
 import { HeroeService } from '../../services/heroe.service';
 import { Heroe } from '../../services/heroe';
 
+import {GraficBarcharComponent} from '../grafic-barchar/grafic-barchar.component';
+
 
 
 @Component({
@@ -26,7 +28,10 @@ export class GraficaPiechartComponent implements OnInit {
 
   constructor(
   private incidentesService: IncidentesService,
-  private heroeService: HeroeService
+  private heroeService: HeroeService,
+  //private graficBarcharComponent: GraficBarcharComponent,
+
+
   ) { }
 
   ngOnInit() {
@@ -60,13 +65,18 @@ export class GraficaPiechartComponent implements OnInit {
       //this.pieChartLabels = this.incidentesService.getPatologiasLabels();
       //this.pieChartData = this.incidentesService.getPatologiasData();
 
-
-
   }
 
   // events
   public chartClicked(e:any):void {
-    console.log(e);
+    console.log(this.labels[e["active"][0]["_index"]]);
+    localStorage.setItem("patologia",this.labels[e["active"][0]["_index"]]);
+
+    //this.graficBarcharComponent.data="asda";
+
+    this.heroeService.getData();
+
+    //location.reload();
     //this.incidentesService.setPatologia("neumonia");
   }
 
