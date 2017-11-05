@@ -58,13 +58,8 @@ import { TablaRiesgosComponent } from './components/tabla-riesgos/tabla-riesgos.
     GraficaPiechartComponent,
     RubrosComponent,
     PatologiasComponent,
-<<<<<<< HEAD
     GraficBarcharComponent, 
     GraficaPiechartComponent, TablaRiesgosComponent
-=======
-    GraficBarcharComponent,
-    GraficaPiechartComponent
->>>>>>> ad12fc0f967fdc0d28e35cf843a83fb2b743a5f6
   ],
   imports: [
     NgbModule.forRoot(),
