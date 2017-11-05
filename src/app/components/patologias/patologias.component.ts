@@ -18,4 +18,21 @@ export class PatologiasComponent implements OnInit {
     this.patologiasAnios=this.incidentesService.getPatologiasAnios();
   }
 
+
+  click1(){
+    localStorage.setItem('patologia', 'gripe');
+    location.reload();
+  }
+
+  click2(){
+      localStorage.setItem('patologia', 'sacrolumbalgia');
+      location.reload();
+  }
+  click3(){
+      localStorage.setItem('patologia', 'neumonía');
+      location.reload();
+  }
+
+
+
 }

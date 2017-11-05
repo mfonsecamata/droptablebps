@@ -106,8 +106,7 @@ export class IncidentesService {
 
     patologias: {labels: ['Gripe', 'Neomonia', 'Cancer'], data:[300, 500, 100]};
 
-
-
+    patologia=localStorage.getItem("patologia");
 
   constructor(private http: Http) {
     //this.headers = new Headers({ 'Content-Type': 'application/json', 'Accept': 'q=0.8;application/json;q=0.9' });
@@ -177,7 +176,9 @@ export class IncidentesService {
   getPatologiasAnios(){
    var anios = ["2013","2012","2015","2016","2017"]
    var data = [];
-   var patologia= "gripe";
+   var patologia= this.patologia;
+
+   console.log("local storage"+ localStorage.getItem("patologia") )
 
    var soloPatologias= this.incidentes.filter(el =>
    el.patologia == patologia);
@@ -194,7 +195,7 @@ export class IncidentesService {
   getPatologiasNombre(){
    var anios = ["2013","2012","2015","2016","2017"]
    var data = [];
-   var patologia= "gripe";
+   var patologia= this.patologia;
 
    var soloPatologias= this.incidentes.filter(el =>
    el.patologia == patologia);
@@ -208,10 +209,16 @@ export class IncidentesService {
 
   }
 
+
+ setPatologia(patologia){
+  this.patologia=patologia;
+ }
+
+
   getPatologiasAnioCantidad(){
    var anios = ["2013","2012","2015","2016","2017"]
    var data = [];
-   var patologia= "gripe";
+   var patologia= this.patologia;
 
    var soloPatologias= this.incidentes.filter(el =>
    el.patologia == patologia);

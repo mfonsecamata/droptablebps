@@ -12,7 +12,7 @@ export class GraficaPiechartComponent implements OnInit {
   public pieChartLabels:string[];
   public pieChartData:number[];
   public pieChartType:string = 'pie';
-  
+
   constructor(private incidentesService: IncidentesService) { }
 
   ngOnInit() {
@@ -20,13 +20,14 @@ export class GraficaPiechartComponent implements OnInit {
     this.pieChartData = this.incidentesService.getPatologiasData();
   }
 
-  
- 
+
+
   // events
   public chartClicked(e:any):void {
     console.log(e);
+    //this.incidentesService.setPatologia("neumonia");
   }
- 
+
   public chartHovered(e:any):void {
     console.log(e);
   }
