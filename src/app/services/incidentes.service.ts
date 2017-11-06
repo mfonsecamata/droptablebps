@@ -119,7 +119,7 @@ hoeroelist : Heroe[];
 
 
   getPatologiasAnios(){
-   var anios = ["2013","2012","2015","2016","2017"];
+    var anios = ["2013","2012","2015","2016","2017"];
    var data = [];
    var patologia= this.patologia;
     console.log("sssssssssssssssssssss");
@@ -145,7 +145,7 @@ hoeroelist : Heroe[];
   }
 
   getPatologiasNombre(){
-   var anios = ["2013","2012","2015","2016","2017"]
+   var anios = ["2013","2012","2015","2016","2017"];
    var data = [];
    var patologia= this.patologia;
 
@@ -168,7 +168,7 @@ hoeroelist : Heroe[];
 
 
   getPatologiasAnioCantidad(){
-   var anios = ["2013","2012","2015","2016","2017"]
+   var anios = ["2013","2012","2015","2016","2017"];
    var data = [];
    var patologia= this.patologia;
 

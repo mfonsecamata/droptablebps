@@ -112,6 +112,7 @@ addIncidente(){
   console.log('aaaaaa');
 
   var y=this.aleatorio(0,7);
+  var x=this.aleatorio(0,4);
 
   this.hoeroelist.push({
     id:this.aleatorio(20,500),
@@ -120,21 +121,21 @@ addIncidente(){
     edad: this.aleatorio(20,60),
     empresa: this.empresas[y],
     factor: this.factores[y],    
-    fecha: this.aleatorio(1,28)+"/"+this.aleatorio(1,12)+"/"+this.aleatorio(2014,2017),
+    fecha: this.aleatorio(1,28)+"/"+this.aleatorio(1,12)+"/"+this.aleatorio(2012,2017),
     nombre: this.nombres[y],
-    patologia: this.patologias[y],
+    patologia: this.patologias[x],
     puesto: this.puestos[y],
     rubro: this.rubros[y],
     salario: this.aleatorio(1,3),       
     lat: this.coordenadas[y].lat,
     lng: this.coordenadas[y].lng,    
-    label: this.empresas[y]+ "-"+ this.patologias[y],
+    label: this.empresas[y]+ "-"+ this.patologias[x],
     zoom:"10",
   })  
 }
 
 insertar(){  
-  Observable.interval(60000).subscribe(x => {
+  Observable.interval(10000).subscribe(x => {
     this.addIncidente()
   });
   
